@@ -30,7 +30,7 @@ criteo_auth <- function(client_id = NULL,
                         save_to_env = F){
 
 
-  body <- list(client_id = client_id, client_secret = client_secret, grant_type = "client_credentials")
+  body <- list(grant_type = "client_credentials",client_id = client_id, client_secret = client_secret)
   results <- httr::POST(url = "https://api.criteo.com/oauth2/token", body = body, encode = "form")
   token <- httr::content(results)[[1]]
 
