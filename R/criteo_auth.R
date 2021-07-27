@@ -31,7 +31,7 @@ criteo_auth <- function(client_id = NULL,
 
 
   body <- list(client_id = client_id, client_secret = client_secret, grant_type = "client_credentials")
-  results <- httr::POST(url = "https://api.criteo.com/marketing/oauth2/token", body = body, encode = "form")
+  results <- httr::POST(url = "https://api.criteo.com/oauth2/token", body = body, encode = "form")
   token <- httr::content(results)[[1]]
 
   #  Simple check to valid Criteo responce. All tokens have same length (941 symbol).
